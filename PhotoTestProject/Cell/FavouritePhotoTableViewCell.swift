@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class LovelyPhotoCell: UITableViewCell {
+final class FavouritePhotoTableViewCell: UITableViewCell {
 
     private let reuseId = "reuseId"
     let photoImage = UIImageView()

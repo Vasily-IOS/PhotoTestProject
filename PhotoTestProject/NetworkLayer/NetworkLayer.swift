@@ -11,7 +11,7 @@ final class NetworkLayer {
 
 // MARK: - random photo
 
-    func fetchData(completion: @escaping (Result<[Results], Error>) -> Void){
+    func fetchData(completion: @escaping (Result<[Photo], Error>) -> Void){
 
         let randomURL =
         """
@@ -25,7 +25,7 @@ final class NetworkLayer {
         session.dataTask(with: request) { data, _, error in
             guard let data = data else { return }
             do {
-                let json = try JSONDecoder().decode(SearchModel.self, from: data)
+                let json = try JSONDecoder().decode(PhotoModel.self, from: data)
                 completion(.success(json.results))
             } catch let error {
                 completion(.failure(error))
@@ -35,7 +35,7 @@ final class NetworkLayer {
 
 // MARK: - search photo
 
-    func fetchSearchData(query: String, completion: @escaping (Result<[Results], Error>) -> Void){
+    func fetchSearchData(query: String, completion: @escaping (Result<[Photo], Error>) -> Void){
 
         let searchURL =
         """
@@ -48,7 +48,7 @@ final class NetworkLayer {
         session.dataTask(with: request) { data, _, error in
             guard let data = data else { return }
             do {
-                let json = try JSONDecoder().decode(SearchModel.self, from: data)
+                let json = try JSONDecoder().decode(PhotoModel.self, from: data)
                 completion(.success(json.results))
             } catch let error {
                 completion(.failure(error))

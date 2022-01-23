@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct SearchModel: Decodable {
+struct PhotoModel: Decodable {
     var total: Int
     var total_pages: Int
-    var results: [Results]
+    var results: [Photo]
 }
 
-struct Results: Decodable {
+struct Photo: Decodable {
     var created_at: String
     var urls: URLs
     var likes: Int
@@ -33,25 +33,3 @@ struct Users: Decodable {
 struct ProfileUrl: Decodable {
     var large: String
 }
-
-//struct PhotoModel: Decodable {
-//    var created_at: String
-//    var urls: Photo
-//    var user: User
-//    var downloads: Int
-//}
-//
-//struct Photo: Decodable {
-//    var regular: String
-//}
-//
-//struct User: Decodable {
-//    var name: String
-//    var location: String?
-//    var profile_image: URLs
-//}
-//
-//struct URLs: Decodable {
-//    var large: String
-//}
-

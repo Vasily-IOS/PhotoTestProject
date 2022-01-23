@@ -9,25 +9,29 @@
 /* Begin PBXBuildFile section */
 		5DA1D480279A157A00CF2D1D /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D47F279A157A00CF2D1D /* NetworkLayer.swift */; };
 		5DA1D491279B686A00CF2D1D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5DA1D490279B686A00CF2D1D /* Kingfisher */; };
-		5DA1D494279B688000CF2D1D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D493279B688000CF2D1D /* PhotoCell.swift */; };
-		5DA1D498279C446400CF2D1D /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D497279C446400CF2D1D /* MoreController.swift */; };
-		5DA1D49B279C476700CF2D1D /* LovelyPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D49A279C476700CF2D1D /* LovelyPhotoCell.swift */; };
+		5DA1D494279B688000CF2D1D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D493279B688000CF2D1D /* PhotoCollectionViewCell.swift */; };
+		5DA1D498279C446400CF2D1D /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D497279C446400CF2D1D /* InfoViewController.swift */; };
+		5DA1D49B279C476700CF2D1D /* FavouritePhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D49A279C476700CF2D1D /* FavouritePhotoTableViewCell.swift */; };
 		5DA1D4CD279D871F00CF2D1D /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D4CC279D871F00CF2D1D /* SearchModel.swift */; };
+		5DA1D4D6279DF35B00CF2D1D /* FavouriteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D4D5279DF35B00CF2D1D /* FavouriteProvider.swift */; };
+		5DA1D4DE279DFD8E00CF2D1D /* JustInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1D4DD279DFD8E00CF2D1D /* JustInfoViewController.swift */; };
 		5DB2921D2799B7DC00CC1DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2921C2799B7DC00CC1DF0 /* AppDelegate.swift */; };
 		5DB2921F2799B7DC00CC1DF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB2921E2799B7DC00CC1DF0 /* SceneDelegate.swift */; };
 		5DB292212799B7DC00CC1DF0 /* StartTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB292202799B7DC00CC1DF0 /* StartTabBarController.swift */; };
 		5DB292262799B7DC00CC1DF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB292252799B7DC00CC1DF0 /* Assets.xcassets */; };
 		5DB292292799B7DC00CC1DF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DB292272799B7DC00CC1DF0 /* LaunchScreen.storyboard */; };
-		5DB292372799BDCD00CC1DF0 /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB292362799BDCD00CC1DF0 /* PhotoCollectionView.swift */; };
-		5DB2923A2799BE1500CC1DF0 /* PhotoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB292392799BE1500CC1DF0 /* PhotoTableView.swift */; };
+		5DB292372799BDCD00CC1DF0 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB292362799BDCD00CC1DF0 /* PhotoCollectionViewController.swift */; };
+		5DB2923A2799BE1500CC1DF0 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB292392799BE1500CC1DF0 /* PhotoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5DA1D47F279A157A00CF2D1D /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
-		5DA1D493279B688000CF2D1D /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		5DA1D497279C446400CF2D1D /* MoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
-		5DA1D49A279C476700CF2D1D /* LovelyPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LovelyPhotoCell.swift; sourceTree = "<group>"; };
+		5DA1D493279B688000CF2D1D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5DA1D497279C446400CF2D1D /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		5DA1D49A279C476700CF2D1D /* FavouritePhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePhotoTableViewCell.swift; sourceTree = "<group>"; };
 		5DA1D4CC279D871F00CF2D1D /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		5DA1D4D5279DF35B00CF2D1D /* FavouriteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProvider.swift; sourceTree = "<group>"; };
+		5DA1D4DD279DFD8E00CF2D1D /* JustInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustInfoViewController.swift; sourceTree = "<group>"; };
 		5DB292192799B7DC00CC1DF0 /* PhotoTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB2921C2799B7DC00CC1DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DB2921E2799B7DC00CC1DF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,8 +39,8 @@
 		5DB292252799B7DC00CC1DF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DB292282799B7DC00CC1DF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DB2922A2799B7DC00CC1DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5DB292362799BDCD00CC1DF0 /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
-		5DB292392799BE1500CC1DF0 /* PhotoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableView.swift; sourceTree = "<group>"; };
+		5DB292362799BDCD00CC1DF0 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		5DB292392799BE1500CC1DF0 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5DA1D4D4279DF33000CF2D1D /* FavouriteProvider */ = {
+			isa = PBXGroup;
+			children = (
+				5DA1D4D5279DF35B00CF2D1D /* FavouriteProvider.swift */,
+			);
+			path = FavouriteProvider;
+			sourceTree = "<group>";
+		};
 		5DB292102799B7DB00CC1DF0 = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +98,13 @@
 		5DB2921B2799B7DC00CC1DF0 /* PhotoTestProject */ = {
 			isa = PBXGroup;
 			children = (
-				5DA1D47E279A155A00CF2D1D /* NetworkLayer */,
-				5DA1D487279AFF7F00CF2D1D /* Model */,
+				5DB292312799BC5300CC1DF0 /* Core */,
 				5DB292332799BC8B00CC1DF0 /* Controllers */,
+				5DA1D487279AFF7F00CF2D1D /* Model */,
+				5DA1D47E279A155A00CF2D1D /* NetworkLayer */,
+				5DA1D4D4279DF33000CF2D1D /* FavouriteProvider */,
 				5DB2923F2799C2B000CC1DF0 /* Cell */,
 				5DB292342799BC9C00CC1DF0 /* Helpers */,
-				5DB292312799BC5300CC1DF0 /* Core */,
 			);
 			path = PhotoTestProject;
 			sourceTree = "<group>";
@@ -110,9 +123,10 @@
 			isa = PBXGroup;
 			children = (
 				5DB292202799B7DC00CC1DF0 /* StartTabBarController.swift */,
-				5DB292362799BDCD00CC1DF0 /* PhotoCollectionView.swift */,
-				5DB292392799BE1500CC1DF0 /* PhotoTableView.swift */,
-				5DA1D497279C446400CF2D1D /* MoreController.swift */,
+				5DB292362799BDCD00CC1DF0 /* PhotoCollectionViewController.swift */,
+				5DB292392799BE1500CC1DF0 /* PhotoTableViewController.swift */,
+				5DA1D497279C446400CF2D1D /* InfoViewController.swift */,
+				5DA1D4DD279DFD8E00CF2D1D /* JustInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,8 +143,8 @@
 		5DB2923F2799C2B000CC1DF0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				5DA1D493279B688000CF2D1D /* PhotoCell.swift */,
-				5DA1D49A279C476700CF2D1D /* LovelyPhotoCell.swift */,
+				5DA1D493279B688000CF2D1D /* PhotoCollectionViewCell.swift */,
+				5DA1D49A279C476700CF2D1D /* FavouritePhotoTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -211,13 +225,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DA1D480279A157A00CF2D1D /* NetworkLayer.swift in Sources */,
-				5DA1D494279B688000CF2D1D /* PhotoCell.swift in Sources */,
+				5DA1D494279B688000CF2D1D /* PhotoCollectionViewCell.swift in Sources */,
 				5DB292212799B7DC00CC1DF0 /* StartTabBarController.swift in Sources */,
-				5DB292372799BDCD00CC1DF0 /* PhotoCollectionView.swift in Sources */,
-				5DA1D498279C446400CF2D1D /* MoreController.swift in Sources */,
-				5DA1D49B279C476700CF2D1D /* LovelyPhotoCell.swift in Sources */,
+				5DB292372799BDCD00CC1DF0 /* PhotoCollectionViewController.swift in Sources */,
+				5DA1D498279C446400CF2D1D /* InfoViewController.swift in Sources */,
+				5DA1D49B279C476700CF2D1D /* FavouritePhotoTableViewCell.swift in Sources */,
 				5DA1D4CD279D871F00CF2D1D /* SearchModel.swift in Sources */,
-				5DB2923A2799BE1500CC1DF0 /* PhotoTableView.swift in Sources */,
+				5DA1D4DE279DFD8E00CF2D1D /* JustInfoViewController.swift in Sources */,
+				5DA1D4D6279DF35B00CF2D1D /* FavouriteProvider.swift in Sources */,
+				5DB2923A2799BE1500CC1DF0 /* PhotoTableViewController.swift in Sources */,
 				5DB2921D2799B7DC00CC1DF0 /* AppDelegate.swift in Sources */,
 				5DB2921F2799B7DC00CC1DF0 /* SceneDelegate.swift in Sources */,
 			);

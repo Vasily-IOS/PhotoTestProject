@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class PhotoCollectionView: UIViewController {
+class PhotoCollectionViewController: UIViewController {
 
 // MARK: - properties
 
@@ -16,7 +16,7 @@ class PhotoCollectionView: UIViewController {
 
     let networkLayer = NetworkLayer()
     let searchBar = UISearchBar()
-    var result = [Results]()
+    var photo = [Photo]()
 
 // MARK: - lifecycle
 
@@ -38,7 +38,7 @@ class PhotoCollectionView: UIViewController {
                 print(error)
             case .success(let success):
                 DispatchQueue.main.async {
-                    self?.result = success
+                    self?.photo = success
                     self?.collectionView?.reloadData()
                 }
             }
@@ -69,51 +69,49 @@ class PhotoCollectionView: UIViewController {
         collectionView.backgroundColor = .white
         collectionView.delegate =  self
         collectionView.dataSource = self
-        collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "photoCell")
+        collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "photoCell")
 
         view.addSubview(collectionView)
         self.collectionView = collectionView
         self.collectionView?.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: view.frame.size.height)
     }
-
 }
 
 // MARK: - extensions
 
-extension PhotoCollectionView: UICollectionViewDataSource {
+extension PhotoCollectionViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return result.count
+        return photo.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCollectionViewCell
         else { return UICollectionViewCell() }
-        let imageUrl = result[indexPath.row].urls.regular
+        let imageUrl = photo[indexPath.row].urls.regular
         cell.configure(with: imageUrl)
         return cell
     }
 }
 
-extension PhotoCollectionView: UICollectionViewDelegate {
+extension PhotoCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
-        let vc = MoreController()
-        guard let url = URL(string: self.result[indexPath.row].user.profile_image.large) else { return }
-        vc.photo.kf.setImage(with: url)
-        vc.nameAuthorLabel.text = "Пользователь: \(self.result[indexPath.row].user.name)"
-        vc.dateOfPublicLabel.text = "Дата публикации: \(self.result[indexPath.row].created_at)"
-        vc.locationLabel.text = "Локация: \(self.result[indexPath.row].user.location ?? "Нет данных")"
-        vc.downloadsLabel.text = "Загрузки: \(self.result[indexPath.row].likes)"
+        let vc = InfoViewController(photo: photo[indexPath.row])
+        guard let url = URL(string: self.photo[indexPath.row].user.profile_image.large) else { return }
+        vc.photoImage.kf.setImage(with: url)
+        vc.nameAuthorLabel.text = "Пользователь: \(self.photo[indexPath.row].user.name)"
+        vc.dateOfPublicLabel.text = "Дата публикации: \(self.photo[indexPath.row].created_at)"
+        vc.locationLabel.text = "Локация: \(self.photo[indexPath.row].user.location ?? "Нет данных")"
+        vc.downloadsLabel.text = "Загрузки: \(self.photo[indexPath.row].likes)"
         present(vc, animated: true)
     }
 }
 
-
-extension PhotoCollectionView: UISearchBarDelegate {
+extension PhotoCollectionViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
-        result = []
+        photo = []
         collectionView?.reloadData()
             networkLayer.fetchSearchData(query: text, completion: { [weak self] results in
                 switch results {
@@ -121,7 +119,7 @@ extension PhotoCollectionView: UISearchBarDelegate {
                     print(error)
                 case .success(let success):
                     DispatchQueue.main.async {
-                        self?.result = success
+                        self?.photo = success
                         self?.collectionView?.reloadData()
                     }
                 }

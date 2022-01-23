@@ -9,11 +9,6 @@ import UIKit
 
 class StartTabBarController: UITabBarController {
 
-// MARK: - properties
-
-    private var photoCollectionVc = PhotoCollectionView()
-    private var photoTableVc = PhotoTableView()
-
 // MARK: - lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,13 +19,17 @@ class StartTabBarController: UITabBarController {
 // MARK: - UI
 
     private func setup(){
+        tabBar.barTintColor = .systemYellow
+        let photoCollectionViewController = PhotoCollectionViewController()
+        let photoTableViewController = PhotoTableViewController()
+
         let collectionItem = UITabBarItem(title: "Search", image: .strokedCheckmark, tag: 0)
-        photoCollectionVc.tabBarItem = collectionItem
+        photoCollectionViewController.tabBarItem = collectionItem
 
-        let tableItem = UITabBarItem(title: "Loves", image: .actions, tag: 0)
-        photoTableVc.tabBarItem = tableItem
+        let tableItem = UITabBarItem(title: "Favourite", image: .actions, tag: 0)
+        photoTableViewController.tabBarItem = tableItem
 
-        self.viewControllers = [photoCollectionVc, photoTableVc]
+        self.viewControllers = [photoCollectionViewController, photoTableViewController]
     }
 
 }

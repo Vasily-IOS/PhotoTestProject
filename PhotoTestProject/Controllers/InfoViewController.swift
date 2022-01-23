@@ -7,19 +7,18 @@
 
 import UIKit
 
-final class MoreController: UIViewController {
+final class InfoViewController: UIViewController {
 
 // MARK: - properties
 
-    let photoCollection = PhotoCollectionView()
-    let photoTable = PhotoTableView()
-
-    let photo = UIImageView()
+    let photoImage = UIImageView()
     let nameAuthorLabel = UILabel()
     let dateOfPublicLabel = UILabel()
     let locationLabel = UILabel()
     let downloadsLabel = UILabel()
     let addButton = UIButton()
+
+    var photoModel: Photo?
 
 // MARK: - lifecycle
 
@@ -28,52 +27,55 @@ final class MoreController: UIViewController {
         setupView()
     }
 
-// MARK: - business logic
+// MARK: - init
 
-    @objc func buttonTapped(_sender: UIButton){
-        addButton.backgroundColor = .green
-        addButton.setTitle("Готово!", for: .normal)
-        addQuestion()
+    convenience init(photo: Photo){
+        self.init()
+        photoModel = photo
     }
 
-    func addQuestion(){}
+// MARK: - Action
 
+    @objc func buttonTapped(){
+        addButton.backgroundColor = .green
+        addButton.setTitle("Готово!", for: .normal)
+        FavouriteProvider.shared.favourite.append(photoModel!)
+    }
 
 // MARK: - UI
 
     private func setupView(){
 
         view.backgroundColor = .white
-
-        photo.layer.cornerRadius = 100
-        photo.clipsToBounds = true
-        photo.contentMode = .scaleAspectFill
+        photoImage.layer.cornerRadius = 100
+        photoImage.clipsToBounds = true
+        photoImage.contentMode = .scaleAspectFill
 
         addButton.setTitle("Сохранить фото", for: .normal)
         addButton.setTitleColor(.black, for: .normal)
         addButton.backgroundColor = .yellow
         addButton.layer.cornerRadius = 5
-        addButton.addTarget(self, action: #selector(buttonTapped(_sender:)), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
 
         [nameAuthorLabel, dateOfPublicLabel, locationLabel, downloadsLabel].forEach{
             $0.textAlignment = .center
             $0.textColor = .black
         }
 
-        [photo, nameAuthorLabel, dateOfPublicLabel, locationLabel, downloadsLabel, addButton].forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
+        [photoImage, nameAuthorLabel, dateOfPublicLabel, locationLabel, downloadsLabel, addButton].forEach{$0.translatesAutoresizingMaskIntoConstraints = false}
 
-        view.addSubview(photo)
+        view.addSubview(photoImage)
         NSLayoutConstraint.activate([
-            photo.heightAnchor.constraint(equalToConstant: 200),
-            photo.widthAnchor.constraint(equalToConstant: 200),
-            photo.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            photo.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            photoImage.heightAnchor.constraint(equalToConstant: 200),
+            photoImage.widthAnchor.constraint(equalToConstant: 200),
+            photoImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            photoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         view.addSubview(nameAuthorLabel)
         NSLayoutConstraint.activate([
             nameAuthorLabel.heightAnchor.constraint(equalToConstant: 50),
             nameAuthorLabel.widthAnchor.constraint(equalToConstant: 400),
-            nameAuthorLabel.topAnchor.constraint(equalTo: photo.bottomAnchor, constant: 20),
+            nameAuthorLabel.topAnchor.constraint(equalTo: photoImage.bottomAnchor, constant: 20),
             nameAuthorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         view.addSubview(dateOfPublicLabel)

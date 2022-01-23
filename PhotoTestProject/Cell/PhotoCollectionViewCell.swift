@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class PhotoCell: UICollectionViewCell {
+final class PhotoCollectionViewCell: UICollectionViewCell {
 
     let reuseId = "photoCell"
     private let imageView: UIImageView = {
